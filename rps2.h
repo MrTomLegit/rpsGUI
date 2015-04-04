@@ -16,12 +16,12 @@ public:
     ~rps2();
 
 private slots:
-   // void on_radioButton_toggled(bool checked);
-    //test comment
+
     void on_pushButton_clicked();
 
 private:
     Ui::rps2 *ui;
+    //Game functions
     int getCompChoice();
     bool gameTime(int, int);
 };

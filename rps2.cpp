@@ -2,7 +2,7 @@
 #include "ui_rps2.h"
 
 
-
+//player vars
 int playerchoice;
 int compchoice;
 rps2::rps2(QWidget *parent) :
@@ -16,10 +16,7 @@ rps2::~rps2()
 {
     delete ui;
 }
-
-
-
-
+//sets the users choice based on radio boxes
 void rps2::on_pushButton_clicked()
 {
     if(ui->rockButton->isChecked())
@@ -37,7 +34,7 @@ void rps2::on_pushButton_clicked()
     compchoice = getCompChoice();
     gameTime(compchoice, playerchoice);
 }
-
+//Generates a pseudo random number for the Computer opponent
 int rps2::getCompChoice()
 {
         int x;
@@ -48,6 +45,7 @@ int rps2::getCompChoice()
         x = rand() % 3 + 1;
         return x;
 }
+//Compares user selection to Computer selection and determines a winner
 bool rps2::gameTime(int cpc, int plc)
 {
     if (cpc == plc)
